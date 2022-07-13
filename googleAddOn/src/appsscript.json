@@ -14,7 +14,8 @@
   "oauthScopes": [
     "https://www.googleapis.com/auth/calendar.events",
     "https://www.googleapis.com/auth/calendar.addons.execute",
-    "https://www.googleapis.com/auth/calendar.addons.current.event.read"
+    "https://www.googleapis.com/auth/calendar.addons.current.event.read",
+    "https://www.googleapis.com/auth/calendar.addons.current.event.write"
   ],
   "addOns": {
     "common": {
@@ -26,7 +27,13 @@
       }
     },
     "calendar": {
-      "currentEventAccess": "READ"
+      "currentEventAccess": "READ_WRITE",
+      "eventOpenTrigger": {
+        "runFunction": "onEventOpen"
+      },
+      "eventUpdateTrigger": {
+        "runFunction": "onEventUpdated"
+      }
     }
   }
 }

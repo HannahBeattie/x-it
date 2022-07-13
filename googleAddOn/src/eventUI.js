@@ -30,7 +30,7 @@ function onEventOpen(evt) {
     return builder.build()
   }
 
-  let btnText = 'Cancel'
+  let btnText = 'I want out'
   let wantsOut = true
 
   // Check to see if there's already an x-it event saved on the server
@@ -43,7 +43,7 @@ function onEventOpen(evt) {
     Logger.log('Event already exists in database' + JSON.stringify(dbEvt))
     const { wantsOut: oldWantsOut } = dbEvt.attendees.find(aa => aa.email === myself.email)
     if (oldWantsOut) {
-      btnText = 'Un-cancel'
+      btnText = 'Wait, I want back in'
       wantsOut = false
     }
   }
@@ -68,18 +68,41 @@ function onEventOpen(evt) {
 }
 
 function xit(evt) {
-  // Logger.log('xit called with params: '+typeof params + ' -- ' +JSON.stringify(params))
-  const calEvt = JSON.parse(evt.parameters.calEvtJson)
+  // Send a request to the x-it server to toggle this user's 'wantsOut' value
+  const calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
+  // const calEvt = JSON.parse(evt.parameters.calEvtJson)
+
   const res = UrlFetchApp.fetch('https://x-it.vercel.app/api/x-it', {
     method: 'post',
     contentType: 'application/json',
     payload: JSON.stringify(calEvt),
   })
-  Logger.log('Got response from x-it server: ' + res.getContentText())
+  const resJson = res.getContentText()
+  Logger.log('Got response from x-it server: ' + resJson)
+
+  // Check if everyone wantsOut and delete the event if they do
+  const dbEvt = JSON.parse(resJson)
+  let deleteIt = true
+  for (const att of dbEvt.attendees) {
+    if (!att.wantsOut) {
+      deleteIt = false
+      break
+    }
+  }
+  if (deleteIt) {
+    Calendar.Events.remove(evt.calendar.calendarId, evt.calendar.id)
+    return CardService.newActionResponseBuilder()
+      .setNotification(
+        CardService.newNotification().setText('DELETED!')
+      )
+      .setStateChanged(true)
+      .build()
+  }
+
+  // Display a notification and update the UI
   return CardService.newActionResponseBuilder()
     .setNotification(
       CardService.newNotification().setText(
-        // 'You have secretly indicated your intention to cancel'
         res.getContentText()
       )
     )
@@ -92,6 +115,5 @@ function xit(evt) {
         ).build()
       )
     )
-    .setStateChanged(true)
     .build()
 }

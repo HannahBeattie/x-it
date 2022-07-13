@@ -13,7 +13,27 @@ function onEventOpen(evt) {
   Logger.log('Extra stuff available to us: ' + JSON.stringify(extra))
 
   // TODO: Handle case when no-one else is invited (and thus attendees array doesn't exist)
+  const myself = calEvt.attendees?.find(aa => aa.self)
+  if (!myself) {
+    const builder = CardService.newCardBuilder()
+    const sect = CardService.newCardSection()
+    sect.addWidget(
+      CardService.newDecoratedText()
+        .setText(
+          'As much as we love cancelling meetings, '
+          + 'nobody else is going to this...'
+          + 'feel free to delete it yourself.'
+        )
+        .setWrapText(true)
+    )
+    builder.addSection(sect)
+    return builder.build()
+  }
 
+  let btnText = 'Cancel'
+  let wantsOut = true
+
+  // Check to see if there's already an x-it event saved on the server
   const res = UrlFetchApp.fetch(
     `https://x-it.vercel.app/api/events/${calEvt.id}`
   )
@@ -21,16 +41,21 @@ function onEventOpen(evt) {
   if (dbEvt) {
     // Find current user in list of attendees
     Logger.log('Event already exists in database' + JSON.stringify(dbEvt))
+    const { wantsOut: oldWantsOut } = dbEvt.attendees.find(aa => aa.email === myself.email)
+    if (oldWantsOut) {
+      btnText = 'Un-cancel'
+      wantsOut = false
+    }
   }
 
   const builder = CardService.newCardBuilder()
   const sect = CardService.newCardSection()
-  sect.addWidget(
-    CardService.newDecoratedText().setText('Secretly cancel, sneak sneak')
-  )
+  // sect.addWidget(
+  //   CardService.newDecoratedText().setText('Secretly cancel, sneak sneak')
+  // )
   sect.addWidget(
     CardService.newTextButton()
-      .setText('Cancel')
+      .setText(btnText)
       .setTextButtonStyle(CardService.TextButtonStyle.FILLED)
       .setOnClickAction(
         CardService.newAction()

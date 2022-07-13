@@ -26,10 +26,20 @@ function onEventOpen(evt) {
 }
 
 function xit() {
+  const res = UrlFetchApp.fetch("https://x-it.vercel.app/api/x-it", {
+    method: 'post',
+    contentType: 'application/json',
+    payload: JSON.stringify({
+      guessWhat: 'you cancelled'
+    })
+  })
+  Logger.log(res.getContentText());
+
   return CardService.newActionResponseBuilder()
     .setNotification(
       CardService.newNotification().setText(
-        'You have secretly indicated your intention to cancel'
+        // 'You have secretly indicated your intention to cancel'
+        res.getContentText()
       )
     )
     .build()

@@ -20,19 +20,12 @@
   "addOns": {
     "common": {
       "name": "X-it",
-      "logoUrl": "https://www.gstatic.com/images/branding/product/1x/translate_24dp.png",
-      "homepageTrigger": {
-        "runFunction": "onHomepage",
-        "enabled": true
-      }
+      "logoUrl": "https://www.gstatic.com/images/branding/product/1x/translate_24dp.png"
     },
     "calendar": {
       "currentEventAccess": "READ_WRITE",
       "eventOpenTrigger": {
         "runFunction": "onEventOpen"
-      },
-      "eventUpdateTrigger": {
-        "runFunction": "onEventUpdated"
       }
     }
   }

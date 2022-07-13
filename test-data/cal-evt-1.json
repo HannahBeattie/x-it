@@ -1,0 +1,49 @@
+{
+  "eventType": "default",
+  "id": "3tpbdmvrtle0efuhfihts0btrh",
+  "summary": "Tedious breakfast :(",
+  "attendees": [
+    { "responseStatus": "needsAction", "email": "mikeylemmon@gmail.com" },
+    {
+      "self": true,
+      "organizer": true,
+      "email": "hannahdbeattie@gmail.com",
+      "responseStatus": "accepted"
+    }
+  ],
+  "htmlLink": "https://www.google.com/calendar/event?eid=M3RwYmRtdnJ0bGUwZWZ1aGZpaHRzMGJ0cmggaGFubmFoZGJlYXR0aWVAbQ",
+  "etag": "\"3315348517616000\"",
+  "creator": { "self": true, "email": "hannahdbeattie@gmail.com" },
+  "status": "confirmed",
+  "iCalUID": "3tpbdmvrtle0efuhfihts0btrh@google.com",
+  "reminders": { "useDefault": true },
+  "end": {
+    "dateTime": "2022-07-14T12:00:00+12:00",
+    "timeZone": "Pacific/Auckland"
+  },
+  "organizer": { "self": true, "email": "hannahdbeattie@gmail.com" },
+  "created": "2022-07-12T23:09:53.000Z",
+  "updated": "2022-07-13T01:04:18.808Z",
+  "hangoutLink": "https://meet.google.com/zmt-vnbw-jhe",
+  "conferenceData": {
+    "conferenceSolution": {
+      "name": "Google Meet",
+      "key": { "type": "hangoutsMeet" },
+      "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+    },
+    "conferenceId": "zmt-vnbw-jhe",
+    "entryPoints": [
+      {
+        "label": "meet.google.com/zmt-vnbw-jhe",
+        "uri": "https://meet.google.com/zmt-vnbw-jhe",
+        "entryPointType": "video"
+      }
+    ]
+  },
+  "kind": "calendar#event",
+  "sequence": 0,
+  "start": {
+    "dateTime": "2022-07-14T11:00:00+12:00",
+    "timeZone": "Pacific/Auckland"
+  }
+}

@@ -1,0 +1,18 @@
+type CalEvent {
+  id: String!
+  summary: String
+  cancelled: Boolean
+  attendees: [Attendee!]
+}
+
+type Attendee @embedded {
+  email: String!
+  wantsOut: Boolean
+  organizer: Boolean
+}
+
+type Query {
+  allCalEvents: [CalEvent!]
+  calEventById(id: String!): CalEvent
+  calEventsByCancelled(cancelled: Boolean!): [CalEvent!]
+}

@@ -1,15 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { listCalEvents } from '../lib/fauna'
+import { getCalEvent, listCalEvents } from '../lib/fauna'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [calEvents, setCalEvents] = useState([])
+  const [calEvent, setCalEvent] = useState([])
   useEffect(() => {
     listCalEvents()
       .then((evts) => setCalEvents(evts))
-      .catch((err) => console.error('Oh no!', err.message))
+      .catch((err) => console.error('Oh no! Cant get events', err.message))
+    getCalEvent('3tpbdmvrtle0efuhfihts0btrh')
+      .then((evts) => setCalEvent(evts))
+      .catch((err) => console.error('Oh no! Unable to get event:', err.message))
   })
   return (
     <div className={styles.container}>
@@ -21,6 +25,9 @@ export default function Home() {
 
       <div>
         <h1>Hello</h1>
+        <pre>The event: {JSON.stringify(calEvent, null, '    ')}</pre>
+        <br />
+        <p>All events:</p>
         {calEvents.map((evt) => (
           <pre key={evt.id}>{JSON.stringify(evt, null, '    ')}</pre>
         ))}

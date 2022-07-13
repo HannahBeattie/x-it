@@ -6,8 +6,6 @@ const CLIENT_SECRET =
   process.env.NEXT_PUBLIC_FAUNA_CLIENT_SECRET
 const FAUNA_GRAPHQL_BASE_URL = 'https://graphql.fauna.com/graphql'
 
-console.log('Using secret:', CLIENT_SECRET)
-
 const graphQLClient = new GraphQLClient(FAUNA_GRAPHQL_BASE_URL, {
   headers: {
     authorization: `Bearer ${CLIENT_SECRET}`,
@@ -32,8 +30,47 @@ export const listCalEvents = () => {
       }
     }
   `
-
   return graphQLClient.request(query).then(({ allCalEvents: { data } }) => data)
+}
+
+export const getCalEvent = (id) => {
+  const query = gql`
+    query GetCalEvent($id: String!) {
+      calEventById(id: $id) {
+        _id
+        _ts
+        id
+        summary
+        cancelled
+        attendees {
+          email
+          wantsOut
+          organizer
+        }
+      }
+    }
+  `
+  return graphQLClient
+    .request(query, { id })
+    .then(({ calEventById }) => calEventById)
+}
+
+export const createCalEvent = (newCalEvent) => {
+  const mutation = gql`
+    mutation CreateCalEvent($input: CalEventInput!) {
+      createCalEvent(data: $input) {
+        id
+        summary
+        cancelled
+        attendees {
+          email
+          wantsOut
+          organizer
+        }
+      }
+    }
+  `
+  return graphQLClient.request(mutation, { input: newCalEvent })
 }
 
 // export const listGuestbookEntries = () => {
@@ -68,6 +105,5 @@ export const listCalEvents = () => {
 //       }
 //     }
 //   `
-
 //   return graphQLClient.request(mutation, { input: newEntry })
 // }

@@ -1,10 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-import { createCalEvent, getCalEvent } from '../../lib/fauna'
-
-const dbGetEvent = (id) => {
-  return db.find((evt) => evt.id === id)
-}
+import { createCalEvent, getCalEvent, updateCalEvent } from '../../lib/fauna'
 
 const dbCreateEvent = (calEvt) => {
   const { self, id, attendees, summary } = calEvt
@@ -44,7 +40,9 @@ export default async function handler(req, res) {
     return
   }
 
-  // const updatedEvt = dbCancel(dbEvt, evt.self.email)
-  // console.log('Updated cancellations for event:', updatedEvt)
-  res.status(200).json({ TODO: 'Update existing cal events', dbId: dbEvt._id })
+  // Update dbEvt to indicate self wants out
+  const dbSelf = dbEvt.attendees.find((aa) => aa.email === email)
+  dbSelf.wantsOut = true
+  const faunaResp = await updateCalEvent(dbEvt)
+  res.status(200).json(faunaResp)
 }

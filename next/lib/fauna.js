@@ -70,7 +70,30 @@ export const createCalEvent = (newCalEvent) => {
       }
     }
   `
-  return graphQLClient.request(mutation, { input: newCalEvent })
+  return graphQLClient
+    .request(mutation, { input: newCalEvent })
+    .then(({ createCalEvent }) => createCalEvent)
+}
+
+export const updateCalEvent = (calEvt) => {
+  const { _id, ...data } = calEvt
+  const mutation = gql`
+    mutation UpdateCalEvent($id: ID!, $data: PartialUpdateCalEvent!) {
+      partialUpdateCalEvent(id: $id, data: $data) {
+        id
+        summary
+        attendees {
+          email
+          wantsOut
+          organizer
+        }
+        cancelled
+      }
+    }
+  `
+  return graphQLClient
+    .request(mutation, { id: _id, data })
+    .then(({ partialUpdateCalEvent }) => partialUpdateCalEvent)
 }
 
 // export const listGuestbookEntries = () => {

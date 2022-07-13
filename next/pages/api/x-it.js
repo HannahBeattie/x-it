@@ -37,9 +37,9 @@ export default async function handler(req, res) {
 
   console.log('Found existing cal event:', JSON.stringify(dbEvt))
 
-  // Update dbEvt to indicate self wants out
+  // Update dbEvt to toggle self's wantsOut
   const dbSelf = dbEvt.attendees.find((aa) => aa.email === evt.self.email)
-  dbSelf.wantsOut = true
+  dbSelf.wantsOut = !dbSelf.wantsOut
   console.log('Updating cal event with:', JSON.stringify(dbEvt))
   const faunaResp = await updateCalEvent(dbEvt)
   res.status(200).json(faunaResp)

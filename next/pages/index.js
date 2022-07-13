@@ -1,8 +1,29 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { getCalEvent, listCalEvents } from '../lib/fauna'
+import { getCalEvent, listCalEvents, updateCalEvent } from '../lib/fauna'
 import { useEffect, useState } from 'react'
+
+const testUpdate = async () => {
+  const calEvt = {
+    _id: '337040437342634579',
+    id: '3tpbdmvrtle0efuhfihts0btrh',
+    summary: 'Tedious breakfast :(',
+    attendees: [
+      {
+        email: 'mikeylemmon@gmail.com',
+        wantsOut: false,
+      },
+      {
+        email: 'hannahdbeattie@gmail.com',
+        wantsOut: false,
+        organizer: true,
+      },
+    ],
+  }
+  const resp = await updateCalEvent(calEvt)
+  console.log('Updated event:', resp)
+}
 
 export default function Home() {
   const [calEvents, setCalEvents] = useState([])
@@ -14,7 +35,8 @@ export default function Home() {
     getCalEvent('3tpbdmvrtle0efuhfihts0btrh')
       .then((evts) => setCalEvent(evts))
       .catch((err) => console.error('Oh no! Unable to get event:', err.message))
-  })
+    testUpdate()
+  }, [])
   return (
     <div className={styles.container}>
       <Head>

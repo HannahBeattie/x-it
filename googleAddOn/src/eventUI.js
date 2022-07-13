@@ -83,5 +83,15 @@ function xit(evt) {
         res.getContentText()
       )
     )
+    .setNavigation(
+      CardService.newNavigation().updateCard(
+        CardService.newCardBuilder().addSection(
+          CardService.newCardSection().addWidget(
+            CardService.newDecoratedText().setText('Your intention has been secretly noted.')
+          )
+        ).build()
+      )
+    )
+    .setStateChanged(true)
     .build()
 }

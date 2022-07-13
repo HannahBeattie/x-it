@@ -16,11 +16,6 @@ const dbCreateEvent = (calEvt) => {
   }
 }
 
-// const dbCancel = (dbEvt, email) => {
-//   const dbSelf = dbEvt.attendees.find((aa) => aa.email === email)
-//   dbSelf.canceled = true
-// }
-
 const simpleCalEvent = (calEvt) => {
   const { id, attendees, summary } = calEvt
   const self = attendees.find((aa) => aa.self)

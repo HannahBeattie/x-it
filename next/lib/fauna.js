@@ -95,38 +95,3 @@ export const updateCalEvent = (calEvt) => {
     .request(mutation, { id: _id, data })
     .then(({ partialUpdateCalEvent }) => partialUpdateCalEvent)
 }
-
-// export const listGuestbookEntries = () => {
-//   const query = gql`
-//     query Entries($size: Int) {
-//       entries(_size: $size) {
-//         data {
-//           _id
-//           _ts
-//           name
-//           message
-//           createdAt
-//         }
-//       }
-//     }
-//   `
-
-//   return graphQLClient
-//     .request(query, { size: 999 })
-//     .then(({ entries: { data } }) => data)
-// }
-
-// export const createGuestbookEntry = (newEntry) => {
-//   const mutation = gql`
-//     mutation CreateGuestbookEntry($input: GuestbookEntryInput!) {
-//       createGuestbookEntry(data: $input) {
-//         _id
-//         _ts
-//         name
-//         message
-//         createdAt
-//       }
-//     }
-//   `
-//   return graphQLClient.request(mutation, { input: newEntry })
-// }

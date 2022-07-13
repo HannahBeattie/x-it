@@ -90,7 +90,10 @@ function xit(evt) {
     }
   }
   if (deleteIt) {
-    Calendar.Events.remove(evt.calendar.calendarId, evt.calendar.id)
+    Calendar.Events.remove(evt.calendar.calendarId, evt.calendar.id, {
+      sendNotifications: true,
+      sendUpdates: 'all',
+    })
     return CardService.newActionResponseBuilder()
       .setNotification(
         CardService.newNotification().setText('DELETED!')

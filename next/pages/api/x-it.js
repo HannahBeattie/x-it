@@ -40,6 +40,15 @@ export default async function handler(req, res) {
   // Update dbEvt to toggle self's wantsOut
   const dbSelf = dbEvt.attendees.find((aa) => aa.email === evt.self.email)
   dbSelf.wantsOut = !dbSelf.wantsOut
+  // Update dbEvt's cancelled value to reflect if everyone wants out
+  dbEvt.cancelled = true
+  for (const att of dbEvt.attendees) {
+    if (!att.wantsOut) {
+      dbEvt.cancelled = false
+      break
+    }
+  }
+  // Save the update to the database
   console.log('Updating cal event with:', JSON.stringify(dbEvt))
   const faunaResp = await updateCalEvent(dbEvt)
   res.status(200).json(faunaResp)

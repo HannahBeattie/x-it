@@ -78,7 +78,7 @@ export const createCalEvent = (newCalEvent) => {
 export const updateCalEvent = (calEvt) => {
   const { _id, ...data } = calEvt
   const mutation = gql`
-    mutation UpdateCalEvent($id: ID!, $data: PartialUpdateCalEvent!) {
+    mutation UpdateCalEvent($id: ID!, $data: PartialUpdateCalEventInput!) {
       partialUpdateCalEvent(id: $id, data: $data) {
         id
         summary

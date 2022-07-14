@@ -4,13 +4,13 @@ import Header from './Header'
 import Blurb from './Blurb'
 import Stats from './Stats'
 
-export default function Home() {
+export default function Home({ numCancelled }) {
   return (
     <>
       <Header />
       <Box margin={5}></Box>
       <Hero />
-      <Stats />
+      <Stats numCancelled={numCancelled} />
       <Blurb />
 
       {/* <FramerTest /> */}

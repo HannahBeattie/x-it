@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.4",
     "@chakra-ui/react": "^2.2.4",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",

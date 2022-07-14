@@ -30,9 +30,6 @@ export default function Header() {
           </HStack>
         </Box>
       </Flex>
-      <Box margin={5}>
-        <ColorToggle />
-      </Box>
     </>
   )
 }

@@ -47,8 +47,7 @@ export default function Hero() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Discreetly vote to cancel unwanted meetings from your google
-            calendar
+            Discreetly vote to cancel unwanted meetings from your calendar
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}

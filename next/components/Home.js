@@ -5,11 +5,11 @@ export default function Home() {
     <>
       <Box bg="#1A202C" w="100%" color="white">
         <Image
-          h={14}
+          h={20}
           padding={3}
           marginLeft={3}
           src="https://x-it.vercel.app/x-it-v2.png"
-          alt="will go here"
+          alt="green X logo"
         />
       </Box>
     </>

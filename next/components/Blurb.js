@@ -24,10 +24,10 @@ export default function Blurb() {
             </AccordionButton>
           </Box>
           <AccordionPanel pb={4}>
-            X-it is a lightweight google plug-in that allows users to vote ‘out’
-            of upcoming google calendar events. The vote remains anonymous
-            unless every attendee secretly votes ‘out’, in which case the event
-            will be cancelled and all attendees notified.
+            X-it is a lightweight plug-in that allows users to vote ‘out’ of
+            upcoming calendar events. The vote remains anonymous unless every
+            attendee secretly votes ‘out’, in which case the event will be
+            cancelled and all attendees notified.
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

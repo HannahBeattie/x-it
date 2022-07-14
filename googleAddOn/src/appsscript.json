@@ -21,7 +21,7 @@
   "addOns": {
     "common": {
       "name": "X-it",
-      "logoUrl": "https://x-it.vercel.app/x-it-logo-test.png"
+      "logoUrl": "https://x-it.vercel.app/x-it-logo.png"
     },
     "calendar": {
       "currentEventAccess": "READ_WRITE",

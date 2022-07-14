@@ -1,4 +1,5 @@
 import { GraphQLClient, gql } from 'graphql-request'
+import { useEffect, useState } from 'react'
 
 const CLIENT_SECRET =
   process.env.FAUNA_ADMIN_KEY ||
@@ -94,4 +95,30 @@ export const updateCalEvent = (calEvt) => {
   return graphQLClient
     .request(mutation, { id: _id, data })
     .then(({ partialUpdateCalEvent }) => partialUpdateCalEvent)
+}
+
+export const countCancelled = () => {
+  const query = gql`
+    query CalEvents($cancelled: Boolean!) {
+      calEventsByCancelled(cancelled: $cancelled) {
+        data {
+          cancelled
+        }
+      }
+    }
+  `
+  return graphQLClient
+    .request(query, { cancelled: true })
+    .then(({ calEventsByCancelled: { data } }) => data.length)
+}
+
+//
+// Hooks
+//
+export const useCountCancelled = () => {
+  const [cancelled, setCancelled] = useState(null)
+  useEffect(() => {
+    countCancelled().then((count) => setCancelled(count))
+  }, [])
+  return cancelled
 }

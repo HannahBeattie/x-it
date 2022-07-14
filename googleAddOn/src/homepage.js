@@ -18,12 +18,18 @@ function homepageCard() {
     return builder.build()
   }
 
+  Logger.log('Building widgets for events: %s', events)
+
   // Add UI for each event
+  let addedWidgets = false
   for (const evt of events) {
     const btnText = fetchBtnText(evt)
+    Logger.log('Adding widget with text: ' + btnText)
+
     if (!btnText) {
       continue
     }
+    addedWidgets = true
 
     sect.addWidget(
       CardService.newDecoratedText()
@@ -40,6 +46,14 @@ function homepageCard() {
               })
             )
         )
+    )
+  }
+
+  if (!addedWidgets) {
+    sect.addWidget(
+      CardService.newDecoratedText()
+        .setTopLabel('Congratulations 🎉')
+        .setText('Nothing to cancel, you are finally alone.')
     )
   }
 
@@ -69,16 +83,6 @@ function fetchBtnText(calEvt) {
     }
   }
   return btnText
-}
-
-function cancelEvent() {
-  return CardService.newActionResponseBuilder()
-    .setNotification(
-      CardService.newNotification().setText(
-        'You have secretly indicated your intention to cancel'
-      )
-    )
-    .build()
 }
 
 /**

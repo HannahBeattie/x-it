@@ -1,11 +1,13 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import { countCancelled } from '../lib/fauna'
 import styles from '../styles/Home.module.css'
-import { useCountCancelled } from '../lib/fauna'
 
-export default function Home() {
-  const numCancelled = useCountCancelled()
+export async function getServerSideProps() {
+  const numCancelled = await countCancelled()
+  return { props: { numCancelled } }
+}
 
+export default function Home({ numCancelled }) {
   return (
     <div className={styles.container}>
       <Head>

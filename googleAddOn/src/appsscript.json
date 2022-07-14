@@ -21,7 +21,7 @@
   "addOns": {
     "common": {
       "name": "X-it",
-      "logoUrl": "https://www.gstatic.com/images/branding/product/1x/translate_24dp.png"
+      "logoUrl": "https://x-it.vercel.app/xit-120.png"
     },
     "calendar": {
       "currentEventAccess": "READ_WRITE",

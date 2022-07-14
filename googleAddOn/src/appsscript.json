@@ -25,6 +25,9 @@
     },
     "calendar": {
       "currentEventAccess": "READ_WRITE",
+      "homepageTrigger": {
+        "runFunction": "onHomepage"
+      },
       "eventOpenTrigger": {
         "runFunction": "onEventOpen"
       }

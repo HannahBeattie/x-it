@@ -12,17 +12,17 @@ function onEventOpen(evt) {
   const { calendar, ...extra } = evt
   Logger.log('Extra stuff available to us: ' + JSON.stringify(extra))
 
-  // TODO: Handle case when no-one else is invited (and thus attendees array doesn't exist)
-  const myself = calEvt.attendees?.find(aa => aa.self)
+  // Handle case when no-one else is invited (and thus attendees array doesn't exist)
+  const myself = calEvt.attendees?.find((aa) => aa.self)
   if (!myself) {
     const builder = CardService.newCardBuilder()
     const sect = CardService.newCardSection()
     sect.addWidget(
       CardService.newDecoratedText()
         .setText(
-          'As much as we love cancelling meetings, '
-          + 'nobody else is going to this...'
-          + 'feel free to delete it yourself.'
+          'As much as we love cancelling meetings, ' +
+            'nobody else is going to this...' +
+            'feel free to delete it yourself.'
         )
         .setWrapText(true)
     )
@@ -31,7 +31,6 @@ function onEventOpen(evt) {
   }
 
   let btnText = 'I want out'
-  let wantsOut = true
 
   // Check to see if there's already an x-it event saved on the server
   const res = UrlFetchApp.fetch(
@@ -41,10 +40,9 @@ function onEventOpen(evt) {
   if (dbEvt) {
     // Find current user in list of attendees
     Logger.log('Event already exists in database' + JSON.stringify(dbEvt))
-    const { wantsOut: oldWantsOut } = dbEvt.attendees.find(aa => aa.email === myself.email)
-    if (oldWantsOut) {
+    const { wantsOut } = dbEvt.attendees.find((aa) => aa.email === myself.email)
+    if (wantsOut) {
       btnText = 'Wait, I want back in'
-      wantsOut = false
     }
   }
 
@@ -58,9 +56,10 @@ function onEventOpen(evt) {
       .setText(btnText)
       .setTextButtonStyle(CardService.TextButtonStyle.FILLED)
       .setOnClickAction(
-        CardService.newAction()
-          .setFunctionName('xit')
-          .setParameters({ calEvtJson: JSON.stringify(calEvt) })
+        CardService.newAction().setFunctionName('xit').setParameters({
+          calendarId: evt.calendar.calendarId,
+          id: evt.calendar.id,
+        })
       )
   )
   builder.addSection(sect)
@@ -69,7 +68,9 @@ function onEventOpen(evt) {
 
 function xit(evt) {
   // Send a request to the x-it server to toggle this user's 'wantsOut' value
-  const calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
+  const { calendarId, id } = evt.parameters
+  const calEvt = Calendar.Events.get(calendarId, id)
+  // const calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
   // const calEvt = JSON.parse(evt.parameters.calEvtJson)
 
   const res = UrlFetchApp.fetch('https://x-it.vercel.app/api/x-it', {
@@ -95,9 +96,7 @@ function xit(evt) {
       sendUpdates: 'all',
     })
     return CardService.newActionResponseBuilder()
-      .setNotification(
-        CardService.newNotification().setText('DELETED!')
-      )
+      .setNotification(CardService.newNotification().setText('DELETED!'))
       .setStateChanged(true)
       .build()
   }
@@ -105,17 +104,19 @@ function xit(evt) {
   // Display a notification and update the UI
   return CardService.newActionResponseBuilder()
     .setNotification(
-      CardService.newNotification().setText(
-        res.getContentText()
-      )
+      CardService.newNotification().setText(res.getContentText())
     )
     .setNavigation(
       CardService.newNavigation().updateCard(
-        CardService.newCardBuilder().addSection(
-          CardService.newCardSection().addWidget(
-            CardService.newDecoratedText().setText('Your intention has been secretly noted.')
+        CardService.newCardBuilder()
+          .addSection(
+            CardService.newCardSection().addWidget(
+              CardService.newDecoratedText().setText(
+                'Your intention has been secretly noted.'
+              )
+            )
           )
-        ).build()
+          .build()
       )
     )
     .build()

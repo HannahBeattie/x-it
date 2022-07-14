@@ -1,12 +1,11 @@
 function onHomepage(e) {
-  // const hostApp = e['hostApp']
   Logger.log('Homepage event: ' + JSON.stringify(e))
-  const builder = CardService.newCardBuilder()
+  return homepageCard()
+}
 
+function homepageCard() {
+  const builder = CardService.newCardBuilder()
   const sect = CardService.newCardSection()
-  // sect.addWidget(
-  // 	CardService.newDecoratedText().setTopLabel('Go ahead').setText('be antisocial')
-  // )
 
   const events = listUpcomingEvents()
   if (!events) {
@@ -37,6 +36,7 @@ function onHomepage(e) {
               CardService.newAction().setFunctionName('xit').setParameters({
                 calendarId: 'primary',
                 id: evt.id,
+                isHomepage: 'true',
               })
             )
         )

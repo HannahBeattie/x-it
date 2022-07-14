@@ -68,7 +68,7 @@ function onEventOpen(evt) {
 
 function xit(evt) {
   // Send a request to the x-it server to toggle this user's 'wantsOut' value
-  const { calendarId, id } = evt.parameters
+  const { calendarId, id, isHomepage } = evt.parameters
   const calEvt = Calendar.Events.get(calendarId, id)
   // const calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
   // const calEvt = JSON.parse(evt.parameters.calEvtJson)
@@ -90,6 +90,24 @@ function xit(evt) {
       break
     }
   }
+
+  let nav
+  if (isHomepage === 'true') {
+    nav = CardService.newNavigation().updateCard(homepageCard())
+  } else {
+    nav = CardService.newNavigation().updateCard(
+      CardService.newCardBuilder()
+        .addSection(
+          CardService.newCardSection().addWidget(
+            CardService.newDecoratedText().setText(
+              'Your intention has been secretly noted.'
+            )
+          )
+        )
+        .build()
+    )
+  }
+
   if (deleteIt) {
     Calendar.Events.remove(evt.calendar.calendarId, evt.calendar.id, {
       sendNotifications: true,
@@ -97,6 +115,7 @@ function xit(evt) {
     })
     return CardService.newActionResponseBuilder()
       .setNotification(CardService.newNotification().setText('DELETED!'))
+      .setNavigation(nav)
       .setStateChanged(true)
       .build()
   }
@@ -104,20 +123,8 @@ function xit(evt) {
   // Display a notification and update the UI
   return CardService.newActionResponseBuilder()
     .setNotification(
-      CardService.newNotification().setText(res.getContentText())
+      CardService.newNotification().setText(JSON.stringify(dbEvt, null, '    '))
     )
-    .setNavigation(
-      CardService.newNavigation().updateCard(
-        CardService.newCardBuilder()
-          .addSection(
-            CardService.newCardSection().addWidget(
-              CardService.newDecoratedText().setText(
-                'Your intention has been secretly noted.'
-              )
-            )
-          )
-          .build()
-      )
-    )
+    .setNavigation(nav)
     .build()
 }

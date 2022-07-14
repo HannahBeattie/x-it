@@ -2,6 +2,7 @@ import {
   Box,
   Center,
   Flex,
+  Heading,
   HStack,
   Image,
   Spacer,
@@ -22,11 +23,11 @@ export default function Header() {
               src="https://x-it.vercel.app/X-it.png"
               alt="green X logo"
             />
-            <Spacer />
 
-            <Text as="i" color="white" padding={7}>
-              your x-it strategy for unwanted engagements
-            </Text>
+            <Spacer />
+            <Box padding={5}>
+              <ColorToggle />
+            </Box>
           </HStack>
         </Box>
       </Flex>

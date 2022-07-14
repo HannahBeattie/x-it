@@ -7,14 +7,10 @@ import {
   Text,
   Button,
   Image,
-  Icon,
-  IconButton,
-  createIcon,
-  IconProps,
-  useColorModeValue,
+  background,
 } from '@chakra-ui/react'
 
-export default function CallToActionWithVideo() {
+export default function Hero() {
   return (
     <Container maxW={'7xl'}>
       <Stack
@@ -43,26 +39,30 @@ export default function CallToActionWithVideo() {
                 zIndex: -1,
               }}
             >
-              Hello,
+              X-it
             </Text>
             <br />
             <Text as={'span'} color={'teal'}>
-              Mr antisocial!
+              Your exit strategy for unwanted engagements
             </Text>
           </Heading>
-          <Text color={'gray.500'}>blah blah</Text>
+          <Text color={'gray.500'}>
+            Discreetly vote to cancel unwanted meetings from your google
+            calendar
+          </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}
           >
             <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-              colorScheme={'teal'}
-              bg={'teal.400'}
-              _hover={{ bg: 'blue' }}
+              colorScheme="teal"
+              border="2px"
+              borderColor={'teal'}
+              variant="outline"
+              size="lg"
+              _hover={{ background: 'teal', color: 'white' }}
+              // alignSelf="stretch"
+              w={{ base: '100%', md: 'initial' }}
             >
               Get started
             </Button>
@@ -83,11 +83,7 @@ export default function CallToActionWithVideo() {
             width={'full'}
             overflow={'hidden'}
           >
-            <Image
-              alt={'Hero Image'}
-              h={'100%'}
-              src={'https://x-it.vercel.app/X-it.png'}
-            />
+            <Image alt={'Hero Image'} h={'100%'} src={'/X-it.png'} />
           </Box>
         </Flex>
       </Stack>

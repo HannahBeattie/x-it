@@ -17,15 +17,5 @@ export default function App({ numCancelled }) {
       </Head>
       <Home numCancelled={numCancelled} />
     </>
-    // <div className={styles.container}>
-
-    //   <div>
-    //     {numCancelled ? (
-    //       <h1>{numCancelled} meetings avoided!</h1>
-    //     ) : (
-    //       <h1>...thinking...</h1>
-    //     )}
-    //   </div>
-    // </div>
   )
 }

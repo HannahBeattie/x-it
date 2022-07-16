@@ -78,11 +78,22 @@ export default function Hero() {
             position={'relative'}
             height={'300px'}
             rounded={'2xl'}
+            borderRightRadius="2xl"
             boxShadow={'2xl'}
             width={'full'}
             overflow={'hidden'}
           >
-            <Image alt={'Hero Image'} h={'100%'} src={'/X-it.png'} />
+            <Box
+              as="video"
+              alt="promo video"
+              rounded="2xl"
+              controls
+              autoplay
+              h="100%"
+            >
+              <source src="/x-it.mp4" type="video/mp4" poster="/X-it.png" />
+              {`Your browser doesn't support HTML5 video tag.`}
+            </Box>
           </Box>
         </Flex>
       </Stack>

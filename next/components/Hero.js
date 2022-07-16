@@ -9,6 +9,7 @@ import {
   Image,
   background,
 } from '@chakra-ui/react'
+import Video from './Video'
 
 export default function Hero() {
   return (
@@ -83,17 +84,7 @@ export default function Hero() {
             width={'full'}
             overflow={'hidden'}
           >
-            <Box
-              as="video"
-              alt="promo video"
-              rounded="2xl"
-              controls
-              autoplay
-              h="100%"
-            >
-              <source src="/x-it.mp4" type="video/mp4" poster="/X-it.png" />
-              {`Your browser doesn't support HTML5 video tag.`}
-            </Box>
+            <Video />
           </Box>
         </Flex>
       </Stack>

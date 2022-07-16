@@ -1,88 +1,38 @@
-function onHomepage(e) {
-  Logger.log('Homepage event: ' + JSON.stringify(e))
+function onHomepage(evt) {
+  Logger.log('Homepage event: ' + JSON.stringify(evt))
   return homepageCard()
 }
 
 function homepageCard() {
-  const builder = CardService.newCardBuilder()
-  const sect = CardService.newCardSection()
-
+  const builder = CardService.newCardBuilder().setName('X-it')
   const events = listUpcomingEvents()
   if (!events) {
-    sect.addWidget(
-      CardService.newDecoratedText()
-        .setTopLabel('All clear!')
-        .setText('Nothing to cancel')
-    )
-    builder.addSection(sect)
+    builder.addSection(noEventsSection())
     return builder.build()
   }
-
-  Logger.log('Building widgets for events: %s', events)
-
   // Add UI for each event
+  Logger.log('Building widgets for events: %s', events)
   let addedWidgets = false
-  for (const evt of events) {
-    const btnText = fetchBtnText(evt)
-    Logger.log('Adding widget with text: ' + btnText)
-
-    if (!btnText) {
+  for (const calEvt of events) {
+    const sect = eventSection(calEvt, 'true')
+    if (!sect) {
       continue
     }
     addedWidgets = true
-
-    sect.addWidget(
-      CardService.newDecoratedText()
-        .setText(evt.summary)
-        .setButton(
-          CardService.newTextButton()
-            .setText(btnText)
-            .setTextButtonStyle(CardService.TextButtonStyle.FILLED)
-            .setOnClickAction(
-              CardService.newAction().setFunctionName('xit').setParameters({
-                calendarId: 'primary',
-                id: evt.id,
-                isHomepage: 'true',
-              })
-            )
-        )
-    )
+    builder.addSection(sect)
   }
-
   if (!addedWidgets) {
-    sect.addWidget(
-      CardService.newDecoratedText()
-        .setTopLabel('Congratulations 🎉')
-        .setText('Nothing to cancel, you are finally alone.')
-    )
+    builder.addSection(noEventsSection())
   }
-
-  builder.addSection(sect)
   return builder.build()
 }
 
-function fetchBtnText(calEvt) {
-  const myself = calEvt.attendees?.find((aa) => aa.self)
-  if (!myself) {
-    return null
-  }
-
-  let btnText = 'I want out'
-
-  // Check to see if there's already an x-it event saved on the server
-  const res = UrlFetchApp.fetch(
-    `https://x-it.vercel.app/api/events/${calEvt.id}`
+function noEventsSection() {
+  return CardService.newCardSection().addWidget(
+    CardService.newDecoratedText()
+      .setTopLabel('Congratulations 🎉')
+      .setText('Nothing to cancel, you are finally alone.')
   )
-  const dbEvt = JSON.parse(res.getContentText())
-  if (dbEvt) {
-    // Find current user in list of attendees
-    Logger.log('Event already exists in database' + JSON.stringify(dbEvt))
-    const { wantsOut } = dbEvt.attendees.find((aa) => aa.email === myself.email)
-    if (wantsOut) {
-      btnText = 'Wait, I want back in'
-    }
-  }
-  return btnText
 }
 
 /**

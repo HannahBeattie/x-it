@@ -11,8 +11,14 @@ type Attendee @embedded {
   organizer: Boolean
 }
 
+type BetaUser {
+  email: String!
+  name: String
+}
+
 type Query {
   allCalEvents: [CalEvent!]
   calEventById(id: String!): CalEvent
   calEventsByCancelled(cancelled: Boolean!): [CalEvent!]
+  allBetaUsers: [BetaUser!]
 }

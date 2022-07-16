@@ -56,6 +56,20 @@ export const getCalEvent = (id) => {
     .then(({ calEventById }) => calEventById)
 }
 
+export const createBetaUser = (newBetaUser) => {
+  const mutation = gql`
+    mutation CreateBetaUser($input: BetaUserInput!) {
+      createBetaUser(data: $input) {
+        email
+        name
+      }
+    }
+  `
+  return graphQLClient
+    .request(mutation, { input: newBetaUser })
+    .then(({ createBetaUser }) => createBetaUser)
+}
+
 export const createCalEvent = (newCalEvent) => {
   const mutation = gql`
     mutation CreateCalEvent($input: CalEventInput!) {

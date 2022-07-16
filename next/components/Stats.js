@@ -1,16 +1,12 @@
-import { Box, Stat, StatArrow, StatLabel, StatNumber } from '@chakra-ui/react'
+import { Box, Heading, NumberInput } from '@chakra-ui/react'
 
 export default function Stats({ numCancelled }) {
   console.log('numcanceelled is', numCancelled)
 
   return (
-    <Box marginLeft={'5rem'}>
-      <Stat>
-        <StatLabel>Cancelled meetings</StatLabel>
-        <StatNumber>{numCancelled}</StatNumber>
-
-        <StatArrow type="increase" />
-      </Stat>
+    <Box marginLeft={'5rem'} marginBottom={4}>
+      <NumberInput fontSize="100">{numCancelled}</NumberInput>
+      <Heading fontSize="lg">Cancelled meetings...and counting!</Heading>{' '}
     </Box>
   )
 }

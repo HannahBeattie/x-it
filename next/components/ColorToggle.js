@@ -13,6 +13,7 @@ export default function ColorToggle() {
   const { colorMode, toggleColorMode } = useColorMode()
   return (
     <IconButton
+      color="#319795"
       isRound
       size="sm"
       aria-label={`Switch to ${colorMode === 'light' ? 'dark' : 'light'} theme`}

@@ -55,6 +55,8 @@ export default function Hero() {
             direction={{ base: 'column', sm: 'row' }}
           >
             <Button
+              as="a"
+              href="/email"
               colorScheme="teal"
               border="2px"
               borderColor={'teal'}
@@ -64,7 +66,7 @@ export default function Hero() {
               // alignSelf="stretch"
               w={{ base: '100%', md: 'initial' }}
             >
-              Get started
+              Join the X-it Beta waitlist
             </Button>
           </Stack>
         </Stack>

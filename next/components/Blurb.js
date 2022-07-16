@@ -14,13 +14,12 @@ import React from 'react'
 export default function Blurb() {
   return (
     <Box marginLeft={'5rem'} marginRight={'5rem'}>
-      <Accordion allowToggle={true}>
+      <Accordion allowToggle={true} outlineColor={'#38B2AC'}>
         <AccordionItem>
           <Box flex="1" textAlign="left" marginLeft={5} marginRight={5}>
             <AccordionButton>
-              <Text>Tell me more</Text>
               <Spacer />
-              <AccordionIcon />
+              <Text> About X-it</Text> <AccordionIcon />
             </AccordionButton>
           </Box>
           <AccordionPanel pb={4}>

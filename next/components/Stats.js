@@ -6,8 +6,9 @@ export default function Stats({ numCancelled }) {
   return (
     <Box marginLeft={'5rem'}>
       <Stat>
-        <StatLabel>Meetings Cancelled</StatLabel>
+        <StatLabel>Cancelled meetings</StatLabel>
         <StatNumber>{numCancelled}</StatNumber>
+
         <StatArrow type="increase" />
       </Stat>
     </Box>

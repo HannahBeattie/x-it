@@ -1,3 +1,27 @@
+function fetchBtnText(calEvt) {
+  const myself = calEvt.attendees?.find((aa) => aa.self)
+  if (!myself) {
+    return null
+  }
+
+  let btnText = 'I want out'
+
+  // Check to see if there's already an x-it event saved on the server
+  const res = UrlFetchApp.fetch(
+    `https://x-it.vercel.app/api/events/${calEvt.id}`
+  )
+  const dbEvt = JSON.parse(res.getContentText())
+  if (dbEvt) {
+    // Find current user in list of attendees
+    Logger.log('Event already exists in database' + JSON.stringify(dbEvt))
+    const { wantsOut } = dbEvt.attendees.find((aa) => aa.email === myself.email)
+    if (wantsOut) {
+      btnText = 'Wait, I want back in'
+    }
+  }
+  return btnText
+}
+
 // Toggle if the user wants out from a calendar event
 // If, after toggling, everyone wants out, then delete the event
 function xit(evt) {
@@ -32,7 +56,7 @@ function xit(evt) {
     })
     return CardService.newActionResponseBuilder()
       .setNotification(CardService.newNotification().setText('DELETED!'))
-      .setNavigation(navUpdateCard(isHomepage))
+      .setNavigation(navUpdateCard(isHomepage, evt))
       .setStateChanged(true)
       .build()
   }
@@ -41,26 +65,16 @@ function xit(evt) {
   return CardService.newActionResponseBuilder()
     .setNotification(
       CardService.newNotification().setText(
-        'Well done, socialising is the worst!'
+        'Your intention has been secretly noted!'
       )
     )
-    .setNavigation(navUpdateCard(isHomepage))
+    .setNavigation(navUpdateCard(isHomepage, evt))
     .build()
 }
 
-function navUpdateCard(isHomepage) {
+function navUpdateCard(isHomepage, evt) {
   if (isHomepage === 'true') {
     return CardService.newNavigation().updateCard(homepageCard())
   }
-  return CardService.newNavigation().updateCard(
-    CardService.newCardBuilder()
-      .addSection(
-        CardService.newCardSection().addWidget(
-          CardService.newDecoratedText().setText(
-            'Your intention has been secretly noted.'
-          )
-        )
-      )
-      .build()
-  )
+  return CardService.newNavigation().updateCard(eventCard(evt))
 }

@@ -21,7 +21,11 @@
   "addOns": {
     "common": {
       "name": "X-it",
-      "logoUrl": "https://x-it.vercel.app/x-it-fav-v.png"
+      "logoUrl": "https://x-it.vercel.app/fav.ico",
+      "layoutProperties": {
+        "primaryColor": "#38B2AC",
+        "secondaryColor": "#38B2AC"
+      }
     },
     "calendar": {
       "currentEventAccess": "READ_WRITE",

@@ -1,16 +1,32 @@
 function onEventOpen(evt) {
+  return eventCard(evt)
+}
+
+function eventCard(evt) {
   if (!evt) {
     Logger.log('No event!')
     return
   }
-  const calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
+
+  let calEvt
+  try {
+    calEvt = Calendar.Events.get(evt.calendar.calendarId, evt.calendar.id)
+  } catch (e) {
+    const builder = CardService.newCardBuilder()
+    const sect = CardService.newCardSection()
+    sect.addWidget(
+      CardService.newDecoratedText()
+        .setText("<i>Is this really the most productive use of everybody's time?</i>")
+        .setWrapText(true)
+    )
+    builder.addSection(sect)
+    return builder.build()
+  }
   if (!calEvt) {
     Logger.log('Unable to find calendar event for ' + JSON.stringify(evt))
     return
   }
   Logger.log('Got calendar event: ' + JSON.stringify(calEvt))
-  const { calendar, ...extra } = evt
-  Logger.log('Extra stuff available to us: ' + JSON.stringify(extra))
 
   // Handle case when no-one else is invited (and thus attendees array doesn't exist)
   const myself = calEvt.attendees?.find((aa) => aa.self)
@@ -46,22 +62,58 @@ function onEventOpen(evt) {
     }
   }
 
-  const builder = CardService.newCardBuilder()
-  const sect = CardService.newCardSection()
-  // sect.addWidget(
-  //   CardService.newDecoratedText().setText('Secretly cancel, sneak sneak')
-  // )
-  sect.addWidget(
-    CardService.newTextButton()
-      .setText(btnText)
-      .setTextButtonStyle(CardService.TextButtonStyle.FILLED)
-      .setOnClickAction(
-        CardService.newAction().setFunctionName('xit').setParameters({
-          calendarId: evt.calendar.calendarId,
-          id: evt.calendar.id,
-        })
-      )
-  )
-  builder.addSection(sect)
+  const builder = CardService.newCardBuilder().setName(calEvt.summary)
+  builder.addSection(eventSection(calEvt, 'false'))
   return builder.build()
+}
+
+function eventSection(calEvt, isHomepage) {
+  const btnText = fetchBtnText(calEvt)
+  if (!btnText) {
+    Logger.log('(eventSection) Skipping ' + calEvt.summary)
+    return null
+  }
+  Logger.log('(eventSection) Adding event section with text: ' + btnText)
+
+  const header = CardService.newTextParagraph().setText(
+    `<b>${calEvt.summary}</b>`
+  )
+
+  const date = CardService.newTextParagraph().setText(
+    `<time>${new Date(calEvt.start.dateTime).toLocaleString()}</time>`
+  )
+
+  // Create text for list of attendees
+  let attTxt = '<i><font color="#666666">Attendees:</font></i>'
+  for (const att of calEvt.attendees) {
+    attTxt += `<br />• ${att.email}`
+  }
+  attTxt += '<br /> <br />'
+  const attendees = CardService.newTextParagraph().setText(attTxt)
+
+  // Create button
+  const action = CardService.newAction().setFunctionName('xit').setParameters({
+    calendarId: 'primary',
+    id: calEvt.id,
+    isHomepage: isHomepage,
+  })
+
+  const button = CardService.newTextButton()
+    .setText(btnText)
+    .setBackgroundColor('#4a5568')
+    .setTextButtonStyle(CardService.TextButtonStyle.FILLED)
+    .setOnClickAction(action)
+  const buttonList = CardService.newButtonSet().addButton(button)
+
+  const padBottom = CardService.newTextParagraph().setText('<br />')
+
+  const section = CardService.newCardSection()
+    .addWidget(header)
+    .addWidget(date)
+    .addWidget(attendees)
+    .addWidget(buttonList)
+    .addWidget(padBottom)
+    .setCollapsible(false)
+
+  return section
 }

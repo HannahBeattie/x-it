@@ -18,6 +18,9 @@
     "https://www.googleapis.com/auth/calendar.addons.current.event.write",
     "https://www.googleapis.com/auth/script.external_request"
   ],
+  "urlFetchWhitelist": [
+    "https://x-it.vercel.app/"
+  ],
   "addOns": {
     "common": {
       "name": "X-it",

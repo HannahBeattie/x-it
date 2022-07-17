@@ -1,3 +1,5 @@
+import { createBetaUser } from '../../lib/fauna'
+
 export default async function handler(req, res) {
   const newBetaUser = req.body
   console.log('Creating a new beta user with', newBetaUser, '(UserInput)')

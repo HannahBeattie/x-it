@@ -34,8 +34,16 @@ export default function Form() {
   async function submitHandler(evt) {
     evt.preventDefault()
     console.log('Adding beta user to fauna...', betaUser)
-    const resp = await createBetaUser(betaUser)
-    console.log('Added beta user to fauna, got response:', resp)
+    // const resp = await createBetaUser(betaUser)
+    const resp = await fetch('/api/beta', {
+      method: 'POST',
+      body: JSON.stringify(betaUser),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const respJson = await resp.json()
+    console.log('Added beta user to fauna, got response:', respJson)
     setBetaUser(emptyUser)
   }
 

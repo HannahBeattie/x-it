@@ -16,7 +16,9 @@ function eventCard(evt) {
     const sect = CardService.newCardSection()
     sect.addWidget(
       CardService.newDecoratedText()
-        .setText("<i>Is this really the most productive use of everybody's time?</i>")
+        .setText(
+          "<i>Is this really the most productive use of everybody's time?</i>"
+        )
         .setWrapText(true)
     )
     builder.addSection(sect)

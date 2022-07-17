@@ -5,6 +5,7 @@ function onHomepage(evt) {
 
 function homepageCard() {
   const builder = CardService.newCardBuilder().setName('X-it')
+  // checkForCancelled()
   const events = listUpcomingEvents()
   if (!events) {
     builder.addSection(noEventsSection())
@@ -48,7 +49,7 @@ function listUpcomingEvents() {
     timeMin: new Date().toISOString(),
     showDeleted: false,
     singleEvents: true,
-    maxResults: 10,
+    maxResults: 15,
     orderBy: 'startTime',
     // use other optional query parameter here as needed.
   }
@@ -56,9 +57,6 @@ function listUpcomingEvents() {
     // call Events.list method to list the calendar events using calendarId optional query parameter
     const response = Calendar.Events.list(calendarId, optionalArgs)
     const events = response.items
-    // const now = new Date()
-    // const twoWeeksFromNow = new Date(+now + 14 * 24 * 60 * 60 * 1000)
-    // const events = CalendarApp.getEvents(now, twoWeeksFromNow)
     if (events.length === 0) {
       Logger.log('No upcoming events found')
       return
@@ -70,7 +68,6 @@ function listUpcomingEvents() {
         when = event.start.date
       }
       Logger.log('%s (%s)', event.summary, when)
-      // Logger.log('%s (%s)', event.summary, event.getStartTime())
     }
     return events
   } catch (err) {

@@ -6,7 +6,7 @@ Hello you!
 
 Welcome to X-it; My final solo assignment, completed as a student at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
 
-<h1>This repository contains:<h1>
+<h1>This repository contains:</h1>
 
 The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 <br>

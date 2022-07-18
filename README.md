@@ -10,11 +10,14 @@ It was completed as my final solo assignment at Enspiral Dev Academy, Wellington
 
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
+
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
   <br>
   <br>
+
+---
 
 ---
 
@@ -28,6 +31,7 @@ If every member votes to cancel, the event is removed and a notification is sent
 <br>
 Interface + under the hood
 <br>
+<br>s
 
 - <b>Google Apps Script</b> provides the user interface/integrates the app with Google Calendar
 - <b>clasp codelab </b> manages deployment and updates to the plu-in

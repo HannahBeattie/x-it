@@ -29,9 +29,9 @@ For the X-it Google plug-in
 If every member votes to cancel, the event is removed and a notification is sent to the members, informing them that the event has been cancelled.</i>
 <br>
 <br>
-Interface + under the hood
+<b><i>Interface + under the hood</i></b>
 <br>
-<br>s
+<br>
 
 - <b>Google Apps Script</b> provides the user interface/integrates the app with Google Calendar
 - <b>clasp codelab </b> manages deployment and updates to the plu-in
@@ -47,7 +47,8 @@ For the [X-it launch site](https://x-it.vercel.app/)
 This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
 The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
 <br>
-Interface + under the hood
+<br>
+<b><i>Interface + under the hood</i></b>
 
 - <b>Next</b> and <b>React.js</b> handles the rendering, content and routes for the website (and API routes to the db)
 - <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
@@ -62,6 +63,7 @@ Interface + under the hood
 <br>
 In your terminal:
 <br>
+
 - git clone git@github.com:HannahBeattie/x-it.git
 - cd x-it
 - cd googleAddOn
@@ -69,10 +71,12 @@ In your terminal:
 - npx class login
 - npx clasp create --title x-it --rootDir ./src
 - mv ./src/.clasp.json.
-<br>
 
-<b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.
+ <br>
+ <br>
+<b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.</b>
 <br>
+ <br>
 Don't panic! Simply follow the link and enable the app on the google script website.
 <br>
 Then, return to your terminal:

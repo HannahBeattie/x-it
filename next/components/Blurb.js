@@ -5,28 +5,30 @@ import {
   AccordionItem,
   AccordionPanel,
   Box,
-  Heading,
-  Spacer,
+  Container,
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Blurb() {
   return (
-    <Box marginLeft={'5rem'} marginRight={'5rem'}>
+    <Box mx="12" my="20">
       <Accordion allowToggle={true} outlineColor={'#38B2AC'}>
         <AccordionItem>
-          <Box flex="1" textAlign="left" marginLeft={5} marginRight={5}>
+          <Box flex="1" textAlign="left">
             <AccordionButton>
-              <Spacer />
               <Text> About X-it</Text> <AccordionIcon />
             </AccordionButton>
           </Box>
           <AccordionPanel pb={4}>
-            X-it is a lightweight plug-in that allows users to vote ‘out’ of
-            upcoming calendar events. The vote remains anonymous unless every
-            attendee secretly votes ‘out’, in which case the event will be
-            cancelled and all attendees notified.
+            <Container>
+              <Text pb="8">
+                X-it is a lightweight plug-in that allows users to vote ‘out’ of
+                upcoming calendar events. The vote remains anonymous unless
+                every attendee secretly votes ‘out’, in which case the event
+                will be cancelled and all attendees notified.
+              </Text>
+            </Container>
           </AccordionPanel>
         </AccordionItem>
       </Accordion>

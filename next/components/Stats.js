@@ -14,7 +14,7 @@ export default function Stats({ from, to }) {
     }
     node.alreadyTriggered = true
     const controls = animate(from, to, {
-      duration: 5,
+      duration: 3,
       onUpdate(value) {
         node.textContent = value.toFixed(0)
       },

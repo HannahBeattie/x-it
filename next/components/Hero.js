@@ -6,15 +6,12 @@ import {
   Heading,
   Text,
   Button,
-  Image,
-  background,
 } from '@chakra-ui/react'
-import FramerTest from './FramerTest'
 import Video from './Video'
 
 export default function Hero() {
   return (
-    <Container maxW={'7xl'}>
+    <Container maxW={'7xl'} px="12">
       <Stack
         align={'center'}
         spacing={{ base: 8, md: 10 }}
@@ -67,7 +64,7 @@ export default function Hero() {
               // alignSelf="stretch"
               w={{ base: '100%', md: 'initial' }}
             >
-              Join the X-it Beta waitlist
+              Join X-it Beta
             </Button>
           </Stack>
         </Stack>

@@ -22,9 +22,8 @@ import Header from './Header'
 const emptyUser = { email: '', name: '' }
 
 export default function Form() {
-  // const [email, setEmail] = useState('')
-  // const [name, setName] = useState('')
   const [betaUser, setBetaUser] = useState(emptyUser)
+  const [submitting, setSubmitting] = useState(false)
 
   const onChange = (evt) => {
     const user = { ...betaUser }
@@ -34,6 +33,7 @@ export default function Form() {
 
   async function submitHandler(evt) {
     evt.preventDefault()
+    setSubmitting(true)
     console.log('Adding beta user to fauna...', betaUser)
     // const resp = await createBetaUser(betaUser)
     const resp = await fetch('/api/beta', {
@@ -46,6 +46,7 @@ export default function Form() {
     const respJson = await resp.json()
     console.log('Added beta user to fauna, got response:', respJson)
     setBetaUser(emptyUser)
+    setSubmitting(false)
   }
 
   return (
@@ -99,30 +100,19 @@ export default function Form() {
         <Flex minWidth="max-content" gap="3" marginTop={10}>
           <Button
             colorScheme="teal"
-            backgroundColor="#319795"
-            border="2px"
-            borderColor={'teal'}
-            variant="solid"
-            size="lg"
-            _hover={{ background: 'teal', color: 'white' }}
-            alignSelf="stretch"
-            type="submit"
-            onClick={submitHandler}
-          >
-            Submit
-          </Button>
-          <Button
-            as="a"
-            href="/"
-            colorScheme="teal"
             border="2px"
             borderColor={'teal'}
             variant="outline"
             size="lg"
             _hover={{ background: 'teal', color: 'white' }}
             alignSelf="stretch"
+            type="submit"
+            onClick={submitHandler}
+            isLoading={submitting}
+            loadingText="Taste freedom"
+            disabled={submitting}
           >
-            Return
+            Yes please!
           </Button>
         </Flex>
       </VStack>

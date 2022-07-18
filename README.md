@@ -12,6 +12,7 @@ It was completed as my final solo assignment at [Enspiral Dev Academy, Wellingto
 
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
+
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
@@ -72,19 +73,19 @@ In your terminal:
 - npx clasp create --title x-it --rootDir ./src
 - mv ./src/.clasp.json.
 
-<br>
-<b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.</b>
-<br>
-<br>
-Don't panic! Simply follow the link and enable the app on the google script website.
-<br>
-Then, return to your terminal:
-<br>
+ <br>
+ At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.
+ <br>
+ <br>
+ Don't panic! Simply follow the link and enable the app on the google script website.
+ <br>
+ Then, return to your terminal:
+ <br>
 
 - npx clasp push
 - npx clasp open
 
-<b>This should open the webpage <i>script.google.com'</i></b>
+This should open the webpage <i>script.google.com</i>
 
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"

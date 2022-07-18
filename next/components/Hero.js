@@ -9,6 +9,7 @@ import {
   Image,
   background,
 } from '@chakra-ui/react'
+import FramerTest from './FramerTest'
 import Video from './Video'
 
 export default function Hero() {

@@ -3,7 +3,7 @@
 
 <br>
 <i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
-It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).</i>
+It was completed as my final solo assignment at Enspiral Dev Academy, Wellington (https://devacademy.co.nz/).</i>
 <br>
 <br>
 ------------------------------------------------------------------------------------------
@@ -25,7 +25,9 @@ For the X-it Google plug-in
 <i>This app allows users to vote anonymously to cancel events from their google calendar.
 If every member votes to cancel, the event is removed and a notification is sent to the members, informing them that the event has been cancelled.</i>
 <br>
+<br>
 Interface + under the hood
+<br>
 
 - <b>Google Apps Script</b> provides the user interface/integrates the app with Google Calendar
 - <b>clasp codelab </b> manages deployment and updates to the plu-in
@@ -84,7 +86,7 @@ This should open the webpage 'script.google.com'
 ---
 
  <h3> F I N I S H E D !</h3>
-
+<br>
 That's it, You did it!
 <br>
 <br>

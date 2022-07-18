@@ -1,4 +1,6 @@
-<h3  style="color:#171923">X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
+W E L C O M E **_ T O _** X - IT
+
+<h3>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
 
 Hello you!
 
@@ -54,24 +56,23 @@ In your terminal:
   <br>
 
 <b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.
-
+<br>
 Don't panic! Simply follow the link and enable the app on the google script website.
-
-Then</b>
-
-Return to your terminal:
+<br>
+Then, return to your terminal:
 
 - npx clasp push
 - npx clasp open
 
-This should open the webpage ( script.google.com )
+This should open the webpage 'script.google.com'
 
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
 
 <br>
 That's it, You did it!
-
+<br>
 Unless you didn't... in which case open an issue in github and I will get back to you as soon as possible.
+<br>
 Happy cancelling!
 <br>

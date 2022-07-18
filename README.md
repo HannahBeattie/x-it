@@ -4,7 +4,7 @@
 <br>
 
 X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
-It was completed as my final solo assignment [at Enspiral Dev Academy, Wellington](https://devacademy.co.nz/),
+It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/),
 
 <br>
 
@@ -12,7 +12,6 @@ It was completed as my final solo assignment [at Enspiral Dev Academy, Wellingto
 
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
-
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
@@ -44,8 +43,8 @@ If every member votes to cancel, the event is removed and a notification is sent
 
 For the [X-it launch site](https://x-it.vercel.app/)
 
-This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
-The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
+<i>This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
+The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.</i>
 <br>
 <br>
 <b><i>Interface + under the hood</i></b>
@@ -54,7 +53,6 @@ The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> runn
 - <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
 - <b>Chakra Ui</b> was used for styling
 
- <br>
  <br>
 
 ---

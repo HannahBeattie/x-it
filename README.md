@@ -3,7 +3,7 @@
 
 <br>
 <i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
-It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
+It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).</i>
 <br>
 ------------------------------------------------------------------------------------------
 

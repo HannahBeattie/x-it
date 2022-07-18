@@ -1,10 +1,12 @@
-W E L C O M E &nbsp &nbsp &nbsp T O &nbsp &nbsp &nbsp X - IT
+H E L L O \_ Y O U !
 
 <h3>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
 
-Hello you!
+Greetings!
 
 Welcome to X-it; My final solo assignment, completed as a student at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
+
+T H I S _ R E P O S I T O R Y _ C O N T A I N S
 
 <h1>This repository contains:</h1>
 
@@ -13,6 +15,8 @@ Welcome to X-it; My final solo assignment, completed as a student at [Enspiral D
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
 
 ---
+
+A B O U T _ T H E _ C O M P O N E N T S
 
 X-it Google plug-in
 
@@ -41,8 +45,8 @@ Interface + under the hood
 
 ---
 
-<br>
-Try X-it
+I N S T A L L A T I O N
+
 <br>
 In your terminal:
 
@@ -69,7 +73,8 @@ This should open the webpage 'script.google.com'
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
 
-<br>
+F I N I S H E D !
+
 That's it, You did it!
 <br>
 Unless you didn't... in which case open an issue in github and I will get back to you as soon as possible.

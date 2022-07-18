@@ -32,7 +32,7 @@ export default function Stats({ from, to }) {
               {' '}
             </motion.div>
           </Heading>
-          <Heading pl="4" pb="4">
+          <Heading pl="4" pb="4" pr="32">
             {' '}
             meetings cancelled, and counting!
           </Heading>

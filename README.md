@@ -1,9 +1,10 @@
  <br>
-<center><h1> H E L L O _ Y O U</h1></center>
+<h1> H E L L O _ Y O U</h1>
 
 <br>
 <i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
 It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).</i>
+<br>
 <br>
 ------------------------------------------------------------------------------------------
 
@@ -12,6 +13,7 @@ It was completed as my final solo assignment at [Enspiral Dev Academy, Wellingto
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
+  <br>
   <br>
 
 ---
@@ -45,6 +47,7 @@ Interface + under the hood
 - <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
 - <b>Chakra Ui</b> was used for styling
   <br>
+  <br>
 
 ---
 
@@ -75,6 +78,7 @@ This should open the webpage 'script.google.com'
 
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
+  <br>
   <br>
 
 ---

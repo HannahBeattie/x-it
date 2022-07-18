@@ -10,12 +10,13 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
+import EgVid from './egvid'
 
 export default function Blurb() {
   return (
     <Box mx="12" my="20">
       <Divider />
-      <Container>
+      <Container marginBottom={5}>
         <Text fontSize="lg" py="8">
           X-it is a lightweight plug-in that allows users to vote ‘out’ of
           upcoming calendar events. The vote remains anonymous unless every
@@ -24,6 +25,9 @@ export default function Blurb() {
         </Text>
       </Container>
       <Divider />
+      <Box marginTop={20}>
+        <EgVid />
+      </Box>
     </Box>
   )
 }

@@ -41,8 +41,7 @@ If every member votes to cancel, the event is removed and a notification is sent
   <br>
   <br>
   <br>
-
-For the [X-it launch site](https://x-it.vercel.app/)
+  For the [X-it launch site](https://x-it.vercel.app/)
 
 This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
 The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
@@ -59,11 +58,11 @@ The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> runn
 ---
 
 <h3> I N S T A L L A T I O N</h3>
-<br>
+
 <br>
 In your terminal:
 <br>
-
+<br>
 - git clone git@github.com:HannahBeattie/x-it.git
 - cd x-it
 - cd googleAddOn
@@ -71,8 +70,6 @@ In your terminal:
 - npx class login
 - npx clasp create --title x-it --rootDir ./src
 - mv ./src/.clasp.json.
-
- <br>
  <br>
 <b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.</b>
 <br>
@@ -84,7 +81,7 @@ Then, return to your terminal:
 - npx clasp push
 - npx clasp open
 
-This should open the webpage 'script.google.com'
+<b>This should open the webpage 'script.google.com'</b>
 
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"

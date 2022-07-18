@@ -1,11 +1,11 @@
  <br>
-<h2> H E L L O _ Y O U</h2>
-<br>
+<center><h1> H E L L O _ Y O U</h1></center>
+
 <br>
 <i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
 It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
 <br>
----
+--------------
 
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
@@ -16,11 +16,10 @@ It was completed as my final solo assignment at [Enspiral Dev Academy, Wellingto
 
 ---
 
-<br>
-<h3> T H E _ T E C H  _ U S E D </h3>
+<h3>  T E C H  _ U S E D </h3>
 <br>
 For the X-it Google plug-in
-
+<br>
 <i>This app allows users to vote anonymously to cancel events from their google calendar.
 If every member votes to cancel, the event is removed and a notification is sent to the members, informing them that the event has been cancelled.</i>
 <br>
@@ -50,8 +49,7 @@ Interface + under the hood
 
 ---
 
-<br>
- <h3> I N S T A L L A T I O N</h3>
+<h3> I N S T A L L A T I O N</h3>
 <br>
 <br>
 In your terminal:
@@ -82,12 +80,13 @@ This should open the webpage 'script.google.com'
 
 ---
 
-<br>
  <h3> F I N I S H E D !</h3>
 
 That's it, You did it!
 <br>
+<br>
 Unless you didn't... in which case open an issue in github and I will get back to you as soon as possible.
+<br>
 <br>
 Happy cancelling!
 <br>

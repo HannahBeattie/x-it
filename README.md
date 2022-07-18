@@ -1,6 +1,4 @@
-<h1>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h1>
-
----
+<h3  style="color:#171923">X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
 
 Hello you!
 

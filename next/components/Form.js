@@ -17,6 +17,7 @@ import {
 import React, { useState } from 'react'
 import ColorToggle from './ColorToggle'
 import { createBetaUser, getCalEvent } from '../lib/fauna'
+import Header from './Header'
 
 const emptyUser = { email: '', name: '' }
 
@@ -48,9 +49,8 @@ export default function Form() {
   }
 
   return (
-    <Box padding={10}>
-      <ColorToggle />
-
+    <Box>
+      <Header />
       {/* <Box bg="gray.700" p="8" mt="8">
         <pre>betaUser = {JSON.stringify(betaUser, null, '    ')}</pre>
       </Box> */}
@@ -95,21 +95,22 @@ export default function Form() {
         </Box>
       </center>
 
-      <Center>
+      <VStack>
         <Flex minWidth="max-content" gap="3" marginTop={10}>
           <Button
             colorScheme="teal"
+            backgroundColor="#319795"
             border="2px"
             borderColor={'teal'}
-            variant="outline"
+            variant="solid"
             size="lg"
             _hover={{ background: 'teal', color: 'white' }}
             alignSelf="stretch"
+            type="submit"
             onClick={submitHandler}
           >
             Submit
           </Button>
-
           <Button
             as="a"
             href="/"
@@ -121,10 +122,10 @@ export default function Form() {
             _hover={{ background: 'teal', color: 'white' }}
             alignSelf="stretch"
           >
-            Home
+            Return
           </Button>
         </Flex>
-      </Center>
+      </VStack>
     </Box>
   )
 }

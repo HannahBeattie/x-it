@@ -23,7 +23,7 @@ It was completed as my final solo assignment at Enspiral Dev Academy, Wellington
 
 <h3>  T E C H  _ U S E D </h3>
 <br>
-For the X-it Google plug-in
+  For the X-it Google plug-in
 <br>
 <i>This app allows users to vote anonymously to cancel events from their google calendar.
 If every member votes to cancel, the event is removed and a notification is sent to the members, informing them that the event has been cancelled.</i>

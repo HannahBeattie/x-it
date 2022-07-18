@@ -1,14 +1,11 @@
-H E L L O \_ Y O U !
+<h3> H E L L O \_ Y O U !<h3>
 
-<h3>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
+X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
+It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
 
-Greetings!
+---
 
-Welcome to X-it; My final solo assignment, completed as a student at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
-
-T H I S _ R E P O S I T O R Y _ C O N T A I N S
-
-<h1>This repository contains:</h1>
+<h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
@@ -16,7 +13,7 @@ T H I S _ R E P O S I T O R Y _ C O N T A I N S
 
 ---
 
-A B O U T _ T H E _ C O M P O N E N T S
+<h3> A B O U T _ T H E _ C O M P O N E N T S</h3>
 
 X-it Google plug-in
 
@@ -45,7 +42,7 @@ Interface + under the hood
 
 ---
 
-I N S T A L L A T I O N
+<h3> I N S T A L L A T I O N</h3>
 
 <br>
 In your terminal:
@@ -73,7 +70,7 @@ This should open the webpage 'script.google.com'
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
 
-F I N I S H E D !
+<h3> F I N I S H E D !</h3>
 
 That's it, You did it!
 <br>

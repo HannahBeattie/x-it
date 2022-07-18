@@ -1,11 +1,11 @@
-<h3> H E L L O _ Y O U !</h3>
+ <h3> H E L L O _ Y O U !</h3>
 
-X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
-It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).
+<i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
+It was completed as my final solo assignment at [Enspiral Dev Academy, Wellington](https://devacademy.co.nz/).</>
 
 ---
 
-<h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
+ <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
@@ -13,7 +13,7 @@ It was completed as my final solo assignment at [Enspiral Dev Academy, Wellingto
 
 ---
 
-<h3> A B O U T _ T H E _ C O M P O N E N T S</h3>
+ <h3> A B O U T _ T H E _ C O M P O N E N T S</h3>
 
 X-it Google plug-in
 
@@ -27,6 +27,8 @@ Interface + under the hood
 - <b>Fauna</b> performs as a document-relational database that stores and manages calendar data + provides api routes and functions connected to the database
 - <b>Next</b> and <b>React.js</b> hosts the api routes queried by the Apps Script code
 - <b>Graphql</b> executes DB queries
+
+---
 
 [X-it launch site](https://x-it.vercel.app/)
 
@@ -42,7 +44,7 @@ Interface + under the hood
 
 ---
 
-<h3> I N S T A L L A T I O N</h3>
+ <h3> I N S T A L L A T I O N</h3>
 
 <br>
 In your terminal:
@@ -70,7 +72,9 @@ This should open the webpage 'script.google.com'
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
 
-<h3> F I N I S H E D !</h3>
+---
+
+ <h3> F I N I S H E D !</h3>
 
 That's it, You did it!
 <br>

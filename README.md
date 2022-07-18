@@ -19,11 +19,10 @@ It was completed as my final solo assignment at Enspiral Dev Academy, Wellington
 
 ---
 
----
-
 <h3>  T E C H  _ U S E D </h3>
 <br>
   For the X-it Google plug-in
+<br>
 <br>
 <i>This app allows users to vote anonymously to cancel events from their google calendar.
 If every member votes to cancel, the event is removed and a notification is sent to the members, informing them that the event has been cancelled.</i>
@@ -38,10 +37,9 @@ If every member votes to cancel, the event is removed and a notification is sent
 - <b>Fauna</b> performs as a document-relational database that stores and manages calendar data + provides api routes and functions connected to the database
 - <b>Next</b> and <b>React.js</b> hosts the api routes queried by the Apps Script code
 - <b>Graphql</b> executes DB queries
-  <br>
-  <br>
-  <br>
-  For the [X-it launch site](https://x-it.vercel.app/)
+
+ <br>
+ For the [X-it launch site](https://x-it.vercel.app/)
 
 This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
 The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
@@ -52,8 +50,9 @@ The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> runn
 - <b>Next</b> and <b>React.js</b> handles the rendering, content and routes for the website (and API routes to the db)
 - <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
 - <b>Chakra Ui</b> was used for styling
-  <br>
-  <br>
+
+ <br>
+ <br>
 
 ---
 
@@ -73,7 +72,7 @@ In your terminal:
  <br>
 <b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.</b>
 <br>
- <br>
+<br>
 Don't panic! Simply follow the link and enable the app on the google script website.
 <br>
 Then, return to your terminal:

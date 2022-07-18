@@ -1,4 +1,4 @@
-W E L C O M E **_ T O _** X - IT
+W E L C O M E &nbsp &nbsp &nbsp T O &nbsp &nbsp &nbsp X - IT
 
 <h3>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings</h3>
 

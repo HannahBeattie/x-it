@@ -9,7 +9,6 @@ Welcome to X-it; My final solo assignment, completed as a student at [Enspiral D
 <h1>This repository contains:</h1>
 
 - The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
-<br>
 
 - The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
 

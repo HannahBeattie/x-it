@@ -37,7 +37,6 @@ Interface + under the hood
 For the [X-it launch site](https://x-it.vercel.app/)
 
 This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
-
 The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
 <br>
 Interface + under the hood

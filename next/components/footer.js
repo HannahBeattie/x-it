@@ -1,15 +1,16 @@
-import { Box, Flex, HStack, Spacer, Text } from '@chakra-ui/react'
+import { Box, Flex, HStack, Link, Spacer, Text } from '@chakra-ui/react'
+import { useEffect, useState } from 'react'
+import FramerTest from './FramerTest'
 
 export default function Footer() {
   return (
     <>
-      <Flex>
+      <Flex marginBottom={15}>
         <Box bg="#1A202C" w="100%">
           <HStack>
-            <Text>Hello</Text>
             <Spacer />
             <Box padding={5}>
-              <Text>Hi</Text>
+              <FramerTest />
             </Box>
           </HStack>
         </Box>

@@ -3,6 +3,7 @@ import Hero from './Hero'
 import Header from './Header'
 import Blurb from './Blurb'
 import Stats from './Stats'
+import Footer from './footer'
 // import Footer from './footer'
 
 export default function Home({ numCancelled }) {
@@ -13,7 +14,7 @@ export default function Home({ numCancelled }) {
       <Hero />
       <Stats from={0} to={numCancelled} />
       <Blurb />
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

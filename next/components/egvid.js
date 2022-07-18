@@ -9,7 +9,7 @@ export default function EgVid() {
           alt="promo video"
           muted
           autoPlay="true"
-          controls
+          controls={false}
           preload="auto"
           loop="true"
           paused="false"

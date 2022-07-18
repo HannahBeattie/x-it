@@ -2,11 +2,13 @@
 <h1> H E L L O _ Y O U</h1>
 
 <br>
-<i>X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
-It was completed as my final solo assignment at Enspiral Dev Academy, Wellington (https://devacademy.co.nz/).</i>
+
+X-it is a lightweight customized application, thats integrates with Google Calendar, allowing users to anonymously vote out of unwanted meetings
+It was completed as my final solo assignment [at Enspiral Dev Academy, Wellington](https://devacademy.co.nz/),
+
 <br>
-<br>
-------------------------------------------------------------------------------------------
+
+---
 
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
@@ -39,7 +41,8 @@ If every member votes to cancel, the event is removed and a notification is sent
 - <b>Graphql</b> executes DB queries
 
  <br>
- For the [X-it launch site](https://x-it.vercel.app/)
+
+For the [X-it launch site](https://x-it.vercel.app/)
 
 This website was created as a presentation tool for this project, with a simple sign-up form that stores Beta testing users to the fauna database on request.
 The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> running on my Google Calendar and stock footage from pexels.com.
@@ -62,6 +65,7 @@ The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> runn
 In your terminal:
 <br>
 <br>
+
 - git clone git@github.com:HannahBeattie/x-it.git
 - cd x-it
 - cd googleAddOn
@@ -69,18 +73,20 @@ In your terminal:
 - npx class login
 - npx clasp create --title x-it --rootDir ./src
 - mv ./src/.clasp.json.
- <br>
+
+<br>
 <b>At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.</b>
 <br>
 <br>
 Don't panic! Simply follow the link and enable the app on the google script website.
 <br>
 Then, return to your terminal:
+<br>
 
 - npx clasp push
 - npx clasp open
 
-<b>This should open the webpage 'script.google.com'</b>
+<b>This should open the webpage <i>script.google.com'</i></b>
 
 - open the editor and click the "Run" button once
 - click the "Deploy" button, select "Test Deployments", click "Install"
@@ -89,7 +95,7 @@ Then, return to your terminal:
 
 ---
 
- <h3> F I N I S H E D !</h3>
+<h3> F I N I S H E D !</h3>
 <br>
 That's it, You did it!
 <br>

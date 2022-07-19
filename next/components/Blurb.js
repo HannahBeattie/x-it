@@ -10,7 +10,7 @@ import {
   Text,
 } from '@chakra-ui/react'
 import React from 'react'
-import EgVid from './egvid'
+import Example from './Example'
 
 export default function Blurb() {
   return (
@@ -26,7 +26,7 @@ export default function Blurb() {
       </Container>
       <Divider />
       <Box marginTop={20}>
-        <EgVid />
+        <Example />
       </Box>
     </Box>
   )

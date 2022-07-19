@@ -1,6 +1,6 @@
 import { Box, Center } from '@chakra-ui/react'
 
-export default function EgVid() {
+export default function Example() {
   return (
     <Center>
       <Box width={'50rem'}>

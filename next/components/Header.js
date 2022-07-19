@@ -1,13 +1,16 @@
 import { Box, Flex, HStack, Image, Spacer } from '@chakra-ui/react'
+import { motion, useMotionValue } from 'framer-motion'
 import Link from 'next/link'
 import ColorToggle from './ColorToggle'
 
 export default function Header() {
+  const x = useMotionValue(0)
+
   return (
-    <>
-      <Flex>
-        <Box bg="#1A202C" w="100%">
-          <HStack>
+    <Flex>
+      <Box bg="#1A202C" w="100%">
+        <HStack>
+          <motion.div whileTap={{ scale: 1.2 }} drag="x" style={{ x }}>
             <Link href="/">
               <a>
                 <Image
@@ -19,14 +22,13 @@ export default function Header() {
                 />
               </a>
             </Link>
-
-            <Spacer />
-            <Box padding={5}>
-              <ColorToggle />
-            </Box>
-          </HStack>
-        </Box>
-      </Flex>
-    </>
+          </motion.div>
+          <Spacer />
+          <Box padding={5}>
+            <ColorToggle />
+          </Box>
+        </HStack>
+      </Box>
+    </Flex>
   )
 }

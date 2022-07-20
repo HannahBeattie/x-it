@@ -7,7 +7,7 @@ import {
   Text,
   Button,
 } from '@chakra-ui/react'
-// import PhoneIm from './PhoneIm'
+import PhoneIm from './PhoneIm'
 import Video from './Video'
 
 export default function Hero() {
@@ -41,6 +41,7 @@ export default function Hero() {
             >
               X-it
             </Text>
+
             <br />
             <Text as={'span'} color={'teal'}>
               Your exit strategy for unwanted engagements
@@ -69,7 +70,7 @@ export default function Hero() {
             </Button>
           </Stack>
         </Stack>
-        {/* <PhoneIm /> */}
+
         <Flex
           flex={1}
           justify={'center'}

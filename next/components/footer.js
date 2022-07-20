@@ -9,7 +9,7 @@ export default function Footer() {
         <Box bg="#1A202C" w="100%">
           <HStack>
             <Spacer />
-            <Box padding={5}>
+            <Box padding={9}>
               <FramerTest />
             </Box>
           </HStack>

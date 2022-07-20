@@ -1,5 +1,6 @@
 import { Container, Heading } from '@chakra-ui/react'
 import { motion, useMotionValue } from 'framer-motion'
+import PhoneIm from './PhoneIm'
 
 export default function FramerTest() {
   const x = useMotionValue(0)
@@ -21,7 +22,7 @@ export default function FramerTest() {
           height="10"
           display="flex"
         >
-          X
+          <PhoneIm />
         </Heading>
       </motion.div>
     </Container>

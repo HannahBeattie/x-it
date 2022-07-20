@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import React from 'react'
 import Example from './Example'
+import PhoneIm from './PhoneIm'
 
 export default function Blurb() {
   return (

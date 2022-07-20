@@ -1,7 +1,8 @@
-import { Box, Flex, HStack, Image, Spacer } from '@chakra-ui/react'
+import { Box, Center, Flex, HStack, Image, Spacer } from '@chakra-ui/react'
 import { motion, useMotionValue } from 'framer-motion'
 import Link from 'next/link'
 import ColorToggle from './ColorToggle'
+import PhoneIm from './PhoneIm'
 
 export default function Header() {
   const x = useMotionValue(0)
@@ -24,9 +25,12 @@ export default function Header() {
             </Link>
           </motion.div>
           <Spacer />
-          <Box padding={5}>
-            <ColorToggle />
-          </Box>
+
+          <Center>
+            <Box paddingTop={5} paddingRight={5}>
+              <ColorToggle />
+            </Box>
+          </Center>
         </HStack>
       </Box>
     </Flex>

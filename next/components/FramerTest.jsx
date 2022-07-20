@@ -7,7 +7,7 @@ export default function FramerTest() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // for smoothly scrolling
+      behavior: 'smooth',
     })
   }
 
@@ -28,13 +28,3 @@ export default function FramerTest() {
     </Container>
   )
 }
-
-// const animationKeyframes = keyframes`
-//   0% { transform: scale(1) rotate(0deg);}
-//   50% { transform: scale(2) rotate(150deg);}
-//   75% { transform: scale(1) rotate(300deg);}
-//   100% { transform: scale(1) rotate(360deg);}
-// `
-// const animation = `${animationKeyframes} infinite 10s linear`
-
-// This function will scroll the window to the top

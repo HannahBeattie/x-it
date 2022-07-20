@@ -1,4 +1,4 @@
-import { Container, Heading } from '@chakra-ui/react'
+import { Container, Heading, Tag, Text } from '@chakra-ui/react'
 import { motion, useMotionValue } from 'framer-motion'
 import PhoneIm from './PhoneIm'
 
@@ -13,7 +13,7 @@ export default function FramerTest() {
 
   return (
     <Container display="flex" alignItems="center" justifyContent="center">
-      <motion.div whileTap={{ scale: 1.2 }} drag="x" style={{ x }}>
+      <motion.div whileTap={{ scale: 1.1 }} drag="x" style={{ x }}>
         <Heading
           onClick={scrollToTop}
           cursor="pointer"

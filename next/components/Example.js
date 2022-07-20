@@ -13,8 +13,9 @@ export default function Example() {
           preload="auto"
           loop="true"
           paused="false"
+          boxShadow="2xl"
         >
-          <source src="/eg.mp4" type="video/mp4" />
+          <source src="/colorFix.mp4" type="video/mp4" />
           {`Your browser doesn't support HTML5 video tag.`}
         </video>
       </Box>

@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <Flex marginBottom={15}>
-        <Box bg="#1A202C" w="100%">
+        <Box w="100%">
           <HStack>
             <Spacer />
             <Box padding={9}>

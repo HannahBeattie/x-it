@@ -1,5 +1,4 @@
-import { Container, Stack, Flex, Box, Heading, Text, Button, VStack } from '@chakra-ui/react'
-import PhoneIm from './PhoneIm'
+import { Button, Container, Heading, Stack, Text, VStack } from '@chakra-ui/react'
 import Video from './Video'
 
 export default function Hero() {
@@ -59,7 +58,6 @@ export default function Hero() {
 					</Stack>
 				</Stack>
 
-				{/* <Flex flex={1} justify={'center'} align={'center'}> */}
 				<VStack
 					position={'relative'}
 					borderRadius='lg'
@@ -68,7 +66,6 @@ export default function Hero() {
 				>
 					<Video />
 				</VStack>
-				{/* </Flex> */}
 			</Stack>
 		</Container>
 	)

@@ -13,11 +13,11 @@ It was completed as my final solo assignment at [Enspiral Dev Academy, Wellingto
  <h3> T H I S _ R E P O S I T O R Y _ C O N T A I N S</h3>
 <br>
 
-- The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
+-   The code for the X-it plug-in, which is currently in testing mode and can be installed using Google’s Apps Script CLI, [Clasp](https://codelabs.developers.google.com/codelabs/clasp/#2).
 
-- The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
-  <br>
-  <br>
+-   The [X-it launch site](https://x-it.vercel.app/), which has a sign-up sheet for Beta testers and stats on meetings cancelled so-far.
+    <br>
+    <br>
 
 ---
 
@@ -34,11 +34,11 @@ If every member votes to cancel, the event is removed and a notification is sent
 <br>
 <br>
 
-- <b>Google Apps Script</b> provides the user interface/integrates the app with Google Calendar
-- <b>clasp codelab </b> manages deployment and updates to the plu-in
-- <b>Fauna</b> performs as a document-relational database that stores and manages calendar data + provides api routes and functions connected to the database
-- <b>Next</b> and <b>React.js</b> hosts the api routes queried by the Apps Script code
-- <b>Graphql</b> executes DB queries
+-   <b>Google Apps Script</b> provides the user interface/integrates the app with Google Calendar
+-   <b>clasp codelab </b> manages deployment and updates to the plu-in
+-   <b>Fauna</b> performs as a document-relational database that stores and manages calendar data + provides api routes and functions connected to the database
+-   <b>Next</b> and <b>React.js</b> hosts the api routes queried by the Apps Script code
+-   <b>Graphql</b> executes DB queries
 
  <br>
 
@@ -50,9 +50,9 @@ The video was created using <b>iMovie</b>, screen-recordings of <b>x-it</b> runn
 <br>
 <b><i>Interface + under the hood</i></b>
 
-- <b>Next</b> and <b>React.js</b> handles the rendering, content and routes for the website (and API routes to the db)
-- <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
-- <b>Chakra Ui</b> was used for styling
+-   <b>Next</b> and <b>React.js</b> handles the rendering, content and routes for the website (and API routes to the db)
+-   <b>Graphql</b> is used again to query the data stored on our <b>Fauna</b> backend.
+-   <b>Chakra Ui</b> was used for styling
 
  <br>
 
@@ -65,13 +65,13 @@ In your terminal:
 <br>
 <br>
 
-- git clone git@github.com:HannahBeattie/x-it.git
-- cd x-it
-- cd googleAddOn
-- npm install
-- npx class login
-- npx clasp create --title x-it --rootDir ./src
-- mv ./src/.clasp.json.
+-   git clone git@github.com:HannahBeattie/x-it.git
+-   cd x-it
+-   cd googleAddOn
+-   npm install
+-   npx class login
+-   npx clasp create --title x-it --rootDir./src
+-   mv ./src/.clasp.json
 
  <br>
  At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.
@@ -82,15 +82,15 @@ In your terminal:
  Then, return to your terminal:
  <br>
 
-- npx clasp push
-- npx clasp open
+-   npx clasp push
+-   npx clasp open
 
 This should open the webpage <i>script.google.com</i>
 
-- open the editor and click the "Run" button once
-- click the "Deploy" button, select "Test Deployments", click "Install"
-  <br>
-  <br>
+-   open the editor and click the "Run" button once
+-   click the "Deploy" button, select "Test Deployments", click "Install"
+    <br>
+    <br>
 
 ---
 

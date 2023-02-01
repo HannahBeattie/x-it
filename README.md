@@ -71,7 +71,7 @@ In your terminal:
 -   npm install
 -   npx class login
 -   npx clasp create --title x-it --rootDir./src
--   mv ./src/.clasp.json
+-   mv ./src/.clasp.json .
 
  <br>
  At this point you will probably get a spooky-looking error message that says 'User has not enabled the App Script API.

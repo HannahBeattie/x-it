@@ -11,7 +11,7 @@ export default function Home({ numCancelled }) {
 			<Header />
 
 			<Hero />
-			<Stats from={0} to={numCancelled} />
+			{/* <Stats from={0} to={numCancelled} /> */}
 			<Blurb />
 			<Footer />
 		</>
